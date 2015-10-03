@@ -1,10 +1,11 @@
 web:
-  image: iojs:2.3.4
+  container_name: kdh
+  image: fuyaode/docer_test
   volumes:
     - .:/app
   working_dir: /app
   ports:
-    - "18080:18080"
+    - "80:18080"
   environment:
     PORT: "18080"
-  command: "/bin/bash -c 'npm install && gulp && npm run start'"
+  command: "/bin/bash -l -c 'npm install && gulp && npm run start'"
